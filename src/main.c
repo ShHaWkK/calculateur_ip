@@ -2,22 +2,22 @@
 #include "ip_calcul.h"
 
 int main() {
-    char ip_address[16];
-    int subnet_index;
+    char ip[16];
+    int mask;
 
-    printf("Entrez l'adresse IP (ex: 192.168.1.1): ");
-    scanf("%15s", ip_address);
+    printf("Entrez l'adresse IP : ");
+    scanf("%15s", ip);
 
-    printf("Entrez l'indice de sous-réseau (ex: 24): ");
-    scanf("%d", &subnet_index);
+    printf("Entrez l'indice de masque : ");
+    scanf("%d", &mask);
 
-    char network_address[16], broadcast_address[16];
+    char network[16], broadcast[16];
 
-    calculate_network_address(ip_address, subnet_index, network_address);
-    calculate_broadcast_address(ip_address, subnet_index, broadcast_address);
+    calc_network_address(ip, mask, network);
+    calc_broadcast_address(ip, mask, broadcast);
 
-    printf("Adresse réseau: %s\n", network_address);
-    printf("Adresse de broadcast: %s\n", broadcast_address);
+    printf("Adresse reseau: %s\n", network);
+    printf("Adresse broadcast: %s\n", broadcast);
 
     return 0;
 }
